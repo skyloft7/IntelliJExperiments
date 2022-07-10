@@ -6,13 +6,17 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.skyloft7.intellijexperiments.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.skyloft7.intellijexperiments.services.MyProjectService"/>
-    </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.skyloft7.intellijexperiments.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+
+
+    <actions>
+        <action
+                id="aReallyCoolID"
+                class="experiments.HelloWorldAction"
+                text="Say Hello World!"
+                description="SDK action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+
 </idea-plugin>
